@@ -1,0 +1,45 @@
+ ***************************** 1653. Minimum Deletions to Make String Balanced ****************************************************************************************
+
+
+# Python Code 
+
+class Solution:
+    def minimumDeletions(self, s: str) -> int:
+        
+        ans = 0
+        c = 0
+        
+        for char in s:
+            if char == 'b':
+                c += 1
+            
+            elif c:
+                
+                ans += 1
+                c -= 1
+        return ans
+        
+
+
+//// C++ Code ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    int minimumDeletions(string s) {
+        
+        int ans = 0;
+        int c = 0;
+
+        for (char ch: s){
+             
+            if ( ch == 'b'){
+                c++;
+            }            
+            else if (c > 0){
+                ans++;
+                c--;                
+            }       
+        } 
+        return ans;
+    }
+};
